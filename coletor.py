@@ -64,13 +64,17 @@ def balancear(no):
 
     # Rotação Simples à Direita
     if balanceamento > 1:
-        if no.timestamp < no.esquerda.timestamp:
-            return rotacao_direita(no)
+        # Rotação Esquerda-Direita
+        if altura(no.esquerda.esquerda) < altura(no.esquerda.direita):
+            no.esquerda = rotacao_esquerda(no.esquerda)
+        return rotacao_direita(no)
 
     # Rotação Simples à Esquerda
     if balanceamento < -1:
-        if no.timestamp > no.direita.timestamp:
-            return rotacao_esquerda(no)
+        # Rotação Direita-Esquerda
+        if altura(no.direita.direita) < altura(no.direita.esquerda):
+            no.direita = rotacao_direita(no.direita)
+        return rotacao_esquerda(no)
 
     return no
 
@@ -99,6 +103,16 @@ def rotacao_esquerda(x):
     y.altura = 1 + max(altura(y.esquerda), altura(y.direita))
 
     return y
+
+# Função para realizar a rotação dupla esquerda-direita (LR Rotation)
+def rotacao_esquerda_direita(y):
+    y.esquerda = rotacao_esquerda(y.esquerda)
+    return rotacao_direita(y)
+
+# Função para realizar a rotação dupla direita-esquerda (RL Rotation)
+def rotacao_direita_esquerda(x):
+    x.direita = rotacao_direita(x.direita)
+    return rotacao_esquerda(x)
 
 # Função para realizar a travessia "in-order" na árvore e armazenar os nós em uma lista
 def travessia_inorder(raiz, resultado):
@@ -163,7 +177,6 @@ def load_data():
 # Carregar os dados pela primeira vez
 df = load_data()
     
-
 # Botão para recarregar dados
 if st.button('Recarregar Dados'):
     df = load_data() 
