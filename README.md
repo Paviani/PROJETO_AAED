@@ -37,8 +37,8 @@ Isso iniciará o servidor Streamlit e abrirá uma nova janela no navegador com a
 ## Estrutura do Projeto
 
 - `coletor.py`: Script principal que contém toda a lógica e as estruturas de dados.
-- `dados/`: Pasta contendo dados em formato CSV.
-- `dados_mqtt/`: Pasta contendo dados em formato JSON.
+- `dados/`: Pasta contendo dados em formato CSV. (Que representa os dados ordenados pela árvore AVL dos payloads dos endpoints.)
+- `dados_mqtt/`: Pasta contendo dados em formato JSON. (Que representa os payloads enviados pelos endpoints.)
 - `requirements.txt`: Arquivo contendo todas as bibliotecas necessárias para executar o projeto.
 
 ## Funcionalidades
