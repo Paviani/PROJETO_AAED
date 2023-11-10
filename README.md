@@ -44,7 +44,7 @@ Isso iniciará o servidor Streamlit e abrirá uma nova janela no navegador com a
 ## Funcionalidades
 
 1. **Leitura dos Dados**: Lê os dados de consumo de água de arquivos JSON.
-2. **Armazenamento dos Dados**: Armazena os dados em uma Árvore AVL.
+2. **Armazenamento dos Dados**: Armazena e ordena os dados em uma Árvore AVL.
 3. **Visualização dos Dados**: Oferece uma interface de usuário para visualizar os dados.
 
 ## Autores
